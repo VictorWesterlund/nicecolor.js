@@ -1,5 +1,8 @@
-# NiceColor.js
+![NiceColor.js](https://i.imgur.com/QhjXDpJ.png)
+
 Generate sleek, modern, nice colors with pure JS.
+
+### [Try it out](https://github.com/VictorWesterlund/nicecolor.js/deployments?environment=github-pages)
 
 ## Get started
 Everything needed for NiceColor.js to work is included in the class, no dependencies.
