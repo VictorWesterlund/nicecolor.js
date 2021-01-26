@@ -1,0 +1,147 @@
+/* Global */
+
+:root {
+	--theme-color: #212121;
+	--theme-padding: 8vh;
+	--transition-speed: 300ms;
+}
+
+* {
+	font-family: "Roboto Mono","sans-serif";
+	margin: 0;
+}
+
+*::selection {
+	background: var(--theme-color);
+	color: white;
+}
+
+.flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* main */
+
+main {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	overflow: hidden;
+}
+
+main .block {
+	width: 50%;
+	height: 100%;
+}
+
+main .block:first-child {
+	transform: translate(-50vw);
+}
+
+main .block:last-child {
+	transform: translate(50vw);
+}
+
+main.active .block {
+	transform: translate(0);
+}
+
+main .block > div {
+	width: calc(100% - var(--theme-padding) * 2);
+	height: calc(100% - var(--theme-padding) * 2);
+}
+
+/* main > #pattern */
+
+main #pattern {
+	background: white;
+}
+
+main #pattern .birdplane {
+	--size: 10vw;
+	--rotation: -45deg;
+	position: absolute;
+	top: 25vh;
+	left: 0%;
+	width: 0;
+	height: 0;
+	border-left: calc(var(--size) * 2) solid transparent;
+	border-right: calc(var(--size)) solid transparent;
+	border-top: calc(var(--size) / 2) solid var(--theme-color);
+	transform-origin: 100% 0%;
+	transform: rotate(var(--rotation));
+	opacity: .13;
+	animation: wingLeft 3s infinite alternate ease;
+}
+
+main #pattern .birdplane:last-of-type {
+	transform: rotate(calc(var(--rotation) * 1.9)) scaleY(-1);
+	animation: wingRight 3s infinite alternate ease;
+}
+
+@keyframes wingLeft {
+	to {
+		transform: rotate(calc(var(--rotation) + 2deg));
+	}
+}
+
+@keyframes wingRight {
+	to {
+		transform: rotate(calc(var(--rotation) * 1.95)) scaleY(-1);
+	}
+}
+
+/* main > #controls */
+
+main #controls {
+	background: var(--theme-color);
+}
+
+main #controls #text {
+	color: white;
+	text-align: center;
+}
+
+main #controls #text *::selection {
+	background: white;
+	color: var(--theme-color);
+}
+
+main #controls #text h1 {
+	font-size: 9vh;
+	text-transform: uppercase;
+}
+
+main #controls #text h2 {
+	font-size: 5vh;
+	font-weight: normal;
+}
+
+main #controls #text h2:last-of-type {
+	width: 70%;
+	font-size: 3vh;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+main #controls #pick {
+	margin-top: auto;
+}
+
+@media screen and (max-width: 1000px) {
+	main {
+		flex-wrap: wrap;
+	}
+
+	main .block {
+		width: 100%;
+		height: 50%;
+	}
+
+	main #pattern .birdplane {
+		--size: 22vw;
+		top: 20vw;
+	}
+}
