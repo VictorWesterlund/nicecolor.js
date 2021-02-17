@@ -2,7 +2,7 @@
 
 Generate sleek, modern, nice colors with pure JS.
 
-### [Try it out](https://victorwesterlund.github.io/nicecolor.js/demo/)
+### [Try it out](https://nicecolor.github.victorwesterlund.com/demo/)
 
 ## Get started
 Everything needed for NiceColor.js to work is included in the class, no dependencies.
